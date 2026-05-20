@@ -17,7 +17,7 @@ rec {
     owner = "theofficialgman";
     repo = "switch-l4t-kernel-4.9";
     rev = kernel_rev;
-    hash = "sha256-usEQGVq4HW4cRQpwSmq4VZeAzthuVaLgYjL38W2iafM=";
+    hash = "sha256-srQLDXy3dbs1wZzI0f9gbcZLCCM7kZ0bjJHP/OvRp34=";
   };
 
   switch-l4t-kernel-nvidia-src = fetchFromGitHub {
