@@ -85,10 +85,8 @@ buildLinux (
   }
   // { 
     argsOverride = (args.argsOverride or {}) // {
-      buildFlags = lib.filter (x: x != "scripts_gdb") (
-        preBuild = ''
-          buildFlags=( "''${buildFlags[@]/scripts_gdb/}" )
-        '' + (args.argsOverride.preBuild or "");
+      extraMakeFlags = lib.filter (x: x != "scripts_gdb") (
+        (args.argsOverride.extraMakeFlags or [ "Image" "vmlinux" "modules" "dtbs" ])
       );
     };
   }
