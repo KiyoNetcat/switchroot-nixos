@@ -1,0 +1,11 @@
+diff --git a/Makefile b/Makefile
+index 1234567..89abcdef 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1600,3 +1600,6 @@ FORCE:
+ # Declare the contents of the .PHONY variable as virtual targets so that make
+ # will invoke the targets regardless of whether a file with that name exists.
+ .PHONY: $(PHONYS)
++
++scripts_gdb:
++	@true
