@@ -85,9 +85,11 @@ buildLinux (
   }
   // { 
     argsOverride = (args.argsOverride or {}) // {
-      preBuild = ''
-        buildFlags=( "''${buildFlags[@]/scripts_gdb/}" )
-      '' + (args.argsOverride.preBuild or "");
+      buildFlags = lib.filter (x: x != "scripts_gdb") (
+        preBuild = ''
+          buildFlags=( "''${buildFlags[@]/scripts_gdb/}" )
+        '' + (args.argsOverride.preBuild or "");
+      );
     };
   }
 )
