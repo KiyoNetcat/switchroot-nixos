@@ -83,5 +83,11 @@ buildLinux (
       }
     ];
   }
-  // (args.argsOverride or { })
+  // {
+    argsOverride = (args.argsOverride or { }) // {
+      postPatch = (args.argsOverride.postPatch or "") + ''
+        echo -e "\nscripts_gdb:\n\t@true" >> Makefile
+      '';
+    };
+  }
 )
