@@ -43,8 +43,9 @@
     "nvgpu"
   ];
   # hardware.nvidia.enabled = true;
-  hardware.nvidia.open = false;
-  hardware.nvidia.package = null;
+  # hardware.nvidia.open = false;
+  # hardware.nvidia.package = null;
+  disabledModules = [ "hardware/video/nvidia.nix" ];
   nixpkgs.config.nvidia.acceptLicense = true;
   hardware.graphics = {
     enable = true;
