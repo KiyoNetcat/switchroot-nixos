@@ -81,10 +81,6 @@ buildLinux (
         name = "03-add_dtbs_install_target.patch";
         patch = ./patches/03-add_dtbs_install_target.patch;
       }
-      {
-        name = "04-stub_targets.patch";
-        patch = ./patches/04-stub_targets.patch;
-      }
     ];
   }
   // (args.argsOverride or { })
