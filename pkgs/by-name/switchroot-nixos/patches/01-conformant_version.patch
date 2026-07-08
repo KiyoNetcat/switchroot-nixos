@@ -1,0 +1,29 @@
+diff --git a/Makefile b/Makefile
+index 55b6639aa9..06266f5931 100644
+--- a/Makefile
++++ b/Makefile
+@@ -3,9 +3,8 @@
+ #
+ 
+ VERSION = 2025
+-PATCHLEVEL = NX02
+-SUBLEVEL = b
+-EXTRAVERSION = 201801
++PATCHLEVEL = 2
++EXTRAVERSION = +NX.b201801
+ NAME =
+ 
+ # *DOCUMENTATION*
+diff --git a/scripts/dtc/pylibfdt/Makefile b/scripts/dtc/pylibfdt/Makefile
+index 01d5e0ffe3..c0db621464 100644
+--- a/scripts/dtc/pylibfdt/Makefile
++++ b/scripts/dtc/pylibfdt/Makefile
+@@ -16,7 +16,7 @@ PYLIBFDT_srcs = $(addprefix $(LIBFDT_srcdir)/,$(LIBFDT_SRCS)) \
+ quiet_cmd_pymod = PYMOD   $@
+       cmd_pymod = unset CC; unset CROSS_COMPILE; unset CFLAGS;\
+ 		LDFLAGS="$(HOSTLDFLAGS)" \
+-		VERSION="u-boot-$(UBOOTVERSION)" \
++		VERSION="$(UBOOTVERSION)" \
+ 		CPPFLAGS="$(HOSTCFLAGS) -I$(LIBFDT_srcdir)" OBJDIR=$(obj) \
+ 		SOURCES="$(PYLIBFDT_srcs)" \
+ 		SWIG_OPTS="-I$(LIBFDT_srcdir) -I$(LIBFDT_srcdir)/.." \

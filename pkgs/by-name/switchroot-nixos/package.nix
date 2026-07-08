@@ -16,6 +16,7 @@
 let
   uImage = callPackage ./uImage.nix { inherit kernel; };
   uInitrd = callPackage ./uInitrd.nix { inherit initialRamdisk; };
+  uboot = callPackage ./uboot.nix {};
   boot-scr = callPackage ./boot-scr.nix { inherit toplevel; };
   dtb-image = callPackage ./dtb-image.nix { inherit kernel; };
   icon = callPackage ./icon.nix { inherit inputs; };
@@ -59,6 +60,7 @@ let
             icon
             uInitrd
             uImage
+            uboot
             boot-scr
             dtb-image
             ;
@@ -70,6 +72,7 @@ let
         cp ${icon} $out/icon.bmp
         cp ${uInitrd} $out/initramfs
         cp ${uImage} $out/uImage
+        cp ${uboot}/u-boot.bin $out/bl33.bin
         cp ${boot-scr} $out/boot.scr
         cp ${dtb-image} $out/nx-plat.dtimg
       '';
