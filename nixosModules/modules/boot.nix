@@ -29,6 +29,7 @@
             cp -v ${switchroot-boot.uInitrd} /boot/switchroot/nixos/initramfs
             cp -v ${switchroot-boot.dtb-image} /boot/switchroot/nixos/nx-plat.dtimg
             cp -v ${switchroot-boot.uboot}/u-boot.bin /boot/switchroot/nixos/bl33.bin
+            cp -v ${switchroot-boot.bl31} $out/bl31.bin
             build-boot-scr "$TOPLEVEL" /boot/switchroot/nixos/boot.scr
           '';
         };
