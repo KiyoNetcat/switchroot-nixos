@@ -49,7 +49,7 @@ with lib;
   ];
   # hardware.nvidia.enabled = true;
   hardware.nvidia.open = false;
-  # hardware.nvidia.package = null;
+  hardware.nvidia.package = null;
   nixpkgs.config.nvidia.acceptLicense = true;
   hardware.graphics = {
     enable = true;
