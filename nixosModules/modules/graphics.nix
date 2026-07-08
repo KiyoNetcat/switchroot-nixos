@@ -51,7 +51,6 @@ with lib;
   hardware.nvidia.open = false;
   # hardware.nvidia.package = null;
   nixpkgs.config.nvidia.acceptLicense = true;
-  nixpkgs.config.allowUnfree = true;
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [

@@ -13,6 +13,7 @@ let
       pkgsCross = import inputs.nixpkgs {
         localSystem = "x86_64-linux";
         crossSystem = system;
+        config.allowUnfree = true;
       };
     in
     pkgsCross.callPackage ./kernel.nix ({ inherit sources; } // args);
